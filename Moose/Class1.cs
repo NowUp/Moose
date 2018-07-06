@@ -24,7 +24,6 @@ namespace Moose
             object a = new Class1();
             if (a is Class1)
             {
-
             }
         }
     }

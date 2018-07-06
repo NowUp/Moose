@@ -21,22 +21,31 @@ namespace Moose
     {
         static void Main(string[] args)
         {
-            DictionaryTest();
 
-            //修改测试
-            lstComputer = new List<string>();
-            //IP();
-            Ping ping = new Ping();
-            PingReply result = ping.Send("192.168.1.11");
+            //Moose.Common.TxtHelper txtHelper = new Common.TxtHelper();
+            //txtHelper.WriteMessage3();
 
-            if (result.Status == IPStatus.Success)
-            {
-                WriteLine("连接成功");
-                IPHostEntry iPHostEntry =  Dns.GetHostEntry("192.168.1.11");
-                WriteLine(iPHostEntry.HostName);
-            }
+            // Professional._28_2.SortingDemo();
 
-            ReadLine();
+            Moose.Common.Methods.ListCommon();
+
+            //DictionaryTest();
+
+            ////修改测试
+
+            ////修改测试
+            //lstComputer = new List<string>();
+            ////IP();
+            //Ping ping = new Ping();
+            //PingReply result = ping.Send("192.168.1.11");
+
+            //if (result.Status == IPStatus.Success)
+            //{
+            //    WriteLine("连接成功");
+            //    IPHostEntry iPHostEntry =  Dns.GetHostEntry("192.168.1.11");
+            //    WriteLine(iPHostEntry.HostName);
+            //}
+
 
             //ImageTest();
             //HttpClientSample httpClientSample = new HttpClientSample();
@@ -53,7 +62,7 @@ namespace Moose
             //{
             //    Console.WriteLine("Double>Float");
             //}
-            
+
             //List<test> tests = new List<test>()
             //    {
             //        new test(){ x = "2018-05-22  05:39:58.076739",y = "43 "},
