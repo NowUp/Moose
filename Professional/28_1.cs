@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Globalization;
+using System.Resources;
 
 namespace Professional
 {
@@ -20,6 +21,7 @@ namespace Professional
             var cultureInfo = new CultureInfo("es-US");
             CultureInfo.CurrentCulture = cultureInfo;
             CultureInfo.CurrentUICulture = cultureInfo;
+
         }
     }
 }

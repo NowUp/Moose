@@ -38,7 +38,7 @@ namespace WPFSample
 
             try
             {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ababababa");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN");
             }
             catch (Exception ex)
             {

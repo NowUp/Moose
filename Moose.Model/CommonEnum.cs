@@ -9,7 +9,7 @@ namespace Moose.Model
 {
     public class CommonEnum
     {
-        public enum InstrumentEnum
+        public enum InstrumentEnum:int
         {
             /// <summary>
             /// 动态配气仪

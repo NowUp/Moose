@@ -68,6 +68,10 @@
       <Project>{efdb6507-64dc-40ee-8884-591451a39bf0}</Project>
       <Name>Moose.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moose.Model\Moose.Model.csproj">
+      <Project>{e08472e8-e4d7-4a57-a413-7cc592606f86}</Project>
+      <Name>Moose.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Professional\Professional.csproj">
       <Project>{20353af9-dbf6-4d12-acb7-b4146784a1d8}</Project>
       <Name>Professional</Name>

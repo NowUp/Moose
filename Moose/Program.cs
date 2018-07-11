@@ -15,6 +15,8 @@ using System.Net.NetworkInformation;
 
 using System.ComponentModel;
 
+using System.Globalization;
+
 namespace Moose
 {
     class Program
@@ -25,7 +27,26 @@ namespace Moose
             //Moose.Common.TxtHelper txtHelper = new Common.TxtHelper();
             //txtHelper.WriteMessage3();
 
-            // Professional._28_2.SortingDemo();
+            // Professional._28_2.SortingDemo
+            Console.WriteLine(Moose.Model.CommonEnum.InstrumentEnum.ConverterPlate.ToString());
+
+
+            Console.WriteLine(Enum.GetName(typeof( Moose.Model.CommonEnum.InstrumentEnum), Moose.Model.CommonEnum.InstrumentEnum.ConverterPlate));
+
+            string s1 = true.ToString();
+            string s2 = false.ToString();
+
+            int i1 = Convert.ToInt32(true);
+            int i2 = Convert.ToInt32(false);
+
+            double d1 = Convert.ToDouble(true);
+            double d2 = Convert.ToDouble(false);
+
+            byte b1 = Convert.ToByte(true);
+            byte b2 = Convert.ToByte(false);
+
+            char c1 = Convert.ToChar(true);
+
 
             Moose.Common.Methods.ListCommon();
 
@@ -93,6 +114,12 @@ namespace Moose
             Console.ReadKey();
 
         }
+
+        void TestMethods()
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo();
+        }
+
 
         static void ImageTest()
         {
