@@ -6,25 +6,38 @@ using System.Threading.Tasks;
 
 namespace Moose
 {
-    class Class1
+
+    public delegate void DelegateMethod1(int a, int b);
+    public  class Class1
     {
-        public int Book{get; }
 
-        private int book;
-        public int Book1 { get { return book; } }
-
-        public bool IsSquare(string param)
+        public static void AddMethod(int a,int b)
         {
-            return false;
+            Console.WriteLine(a+b);
+            Console.WriteLine("Class1");
         }
-        public bool IsFalse(string param) => false;
 
-        public static void Method1()
+        public static void Mehod1()
         {
-            object a = new Class1();
-            if (a is Class1)
-            {
-            }
+            Class2 class2 = new Class2();
+            class2.TestMethod( AddMethod);
+
+        }
+    }
+
+    public class Class2
+    {
+        public delegate void Event_Add(int a,int b);
+        Event_Add aaaa;
+        public void TestMethod(Action<int, int> method)
+        {
+             aaaa = new Event_Add(method);
+        }
+
+        public void AA()
+        {
+            Console.WriteLine("Class2");
+            aaaa(1,2);
         }
     }
 }

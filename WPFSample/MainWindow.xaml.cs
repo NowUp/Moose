@@ -24,6 +24,13 @@ namespace WPFSample
         public MainWindow()
         {
             InitializeComponent();
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+        }
+
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

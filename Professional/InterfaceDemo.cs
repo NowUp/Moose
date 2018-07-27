@@ -15,7 +15,6 @@ namespace Professional
         void Method3();
 
         void Method4();
-
       
     }
 }

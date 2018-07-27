@@ -47,12 +47,12 @@ namespace Moose.Common
             //    return "111";
             //});
 
-            //using (StreamWriter sw = File.CreateText(""))
-            //{
-            //    sw.WriteLine("Hello");
-            //    sw.WriteLine("And");
-            //    sw.WriteLine("Welcome");
-            //}
+            using (StreamWriter sw = File.CreateText(""))
+            {
+                sw.WriteLine("Hello");
+                sw.WriteLine("And");
+                sw.WriteLine("Welcome");
+            }
 
             using (StreamReader sr = File.OpenText(""))
             {
@@ -74,7 +74,7 @@ namespace Moose.Common
 
             }
 
-            //StreamWriter Sw2 = File.CreateText(@"C:\Users\Chen\Desktop\tt.txt");
+            StreamWriter Sw3 = File.CreateText(@"C:\Users\Chen\Desktop\tt.txt");
             
         }
     }

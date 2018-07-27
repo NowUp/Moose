@@ -28,27 +28,52 @@ namespace Moose
             //txtHelper.WriteMessage3();
 
             // Professional._28_2.SortingDemo
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            test i2 = Test3();
+
+            Console.WriteLine(i2.x);
+            List<int> list = new List<int>()
+            {
+                1,2,3,4,5,6,7,8
+            };
+
+            Console.WriteLine(list.ToString());
+
+            
+
+
+            Console.WriteLine(String.Join(",",list));
+
+            DateTimeFormatInfo dtFormat = new System.Globalization.DateTimeFormatInfo();
+
+            dtFormat.FullDateTimePattern = "yyyyMMddHHmmss";
+
+            string _Date = DateTime.Now.ToString(dtFormat.FullDateTimePattern);
+
+            Console.WriteLine(_Date);
+
+            Console.WriteLine(DateTime.Now.ToString(dtFormat));
+
+            DateTimeFormatInfo dtFormat1 = new DateTimeFormatInfo();
+            dtFormat1.ShortDatePattern = "yyyyMMdd";
+            dtFormat1.LongTimePattern = "HHmmss";
+
+
+            Console.WriteLine(DateTime.Now.ToString(dtFormat1));
+
+            DateTime dt1 = Convert.ToDateTime("20180811112233", dtFormat1);
+
+
             Console.WriteLine(Moose.Model.CommonEnum.InstrumentEnum.ConverterPlate.ToString());
 
 
             Console.WriteLine(Enum.GetName(typeof( Moose.Model.CommonEnum.InstrumentEnum), Moose.Model.CommonEnum.InstrumentEnum.ConverterPlate));
-
-            string s1 = true.ToString();
-            string s2 = false.ToString();
-
-            int i1 = Convert.ToInt32(true);
-            int i2 = Convert.ToInt32(false);
-
-            double d1 = Convert.ToDouble(true);
-            double d2 = Convert.ToDouble(false);
-
-            byte b1 = Convert.ToByte(true);
-            byte b2 = Convert.ToByte(false);
-
-            char c1 = Convert.ToChar(true);
+            
 
 
-            Moose.Common.Methods.ListCommon();
+            new  Moose.Common.XmlHepler().Method1();
 
             //DictionaryTest();
 
@@ -115,11 +140,94 @@ namespace Moose
 
         }
 
-        void TestMethods()
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo();
+            throw new NotImplementedException();
+
+            
         }
 
+        static int Test1()
+        {
+            int i;
+            try
+            {
+                i = 1;
+            }
+            finally
+            {
+                i = 2;
+            }
+           
+
+            return i;
+        }
+
+         static int Test21()
+        {
+            int i;
+            try
+            {
+                return i = 1;
+            }
+            catch(Exception ex)
+            {
+                throw;
+                throw ex;
+            }
+            finally
+            {
+                i = 2;
+            }
+        }
+
+        static int Test22()
+        {
+            int i;
+            int i2;
+            try
+            {
+                i2 = i = 1;
+            }
+            finally
+            {
+                i = 2;
+            }
+            return i2;
+        }
+
+        static test Test3()
+        {
+            test a = new test("aa");
+            try
+            {
+                Console.WriteLine("返回i");
+                return a;
+            }
+            finally
+            {
+                a.x = "bb";
+                Console.WriteLine("修改i");
+            }
+        }
+
+        static test Test4()
+        {
+            test a = new test("aa");
+            test b;
+            try
+            {
+                Console.WriteLine("返回i");
+                b = a;
+            }
+            finally
+            {
+                a.x = "bb";
+                Console.WriteLine("修改i");
+            }
+
+            return b;
+        }
 
         static void ImageTest()
         {
@@ -200,11 +308,11 @@ namespace Moose
 
         static void TesetIsAs()
         {
-            object obj = new test();
-            if (obj is test)
-            {
-                test a = obj as test;
-            }
+            //object obj = new test();
+            //if (obj is test)
+            //{
+            //    test a = obj as test;
+            //}
         }
 
         static void  Switch()
@@ -318,8 +426,12 @@ namespace Moose
         }
     }
 
-    class test
+    public class test
     {
+        public test(string xx)
+        {
+            x = xx;
+        }
         public string x { get; set; }
 
         public string y { get; set; }
