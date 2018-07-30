@@ -45,6 +45,7 @@
     <Compile Include="28_3.cs" />
     <Compile Include="AbstractDemo.cs" />
     <Compile Include="InterfaceDemo.cs" />
+    <Compile Include="LINQToXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

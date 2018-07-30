@@ -28,23 +28,11 @@ namespace Moose
             //txtHelper.WriteMessage3();
 
             // Professional._28_2.SortingDemo
-
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
-            test i2 = Test3();
-
-            Console.WriteLine(i2.x);
-            List<int> list = new List<int>()
-            {
-                1,2,3,4,5,6,7,8
-            };
-
-            Console.WriteLine(list.ToString());
+            new Professional.LINQToXML().Method1();
 
             
 
-
-            Console.WriteLine(String.Join(",",list));
+            
 
             DateTimeFormatInfo dtFormat = new System.Globalization.DateTimeFormatInfo();
 
